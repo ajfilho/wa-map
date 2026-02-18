@@ -1,15 +1,14 @@
-console.log("Script da Bolha de Áudio carregado!");
+console.log("Script versão 2.0 carregado!");
 
 // Quando o avatar PISAR no quadrado invisível
 WA.room.onEnterZone('zona_reuniao', () => {
-    // 1. Mostra a tela escura no resto do mapa
-    WA.room.showLayer('dark_overlay');
-    // 2. Trava a câmera na bolha (opcional, dá um efeito cinematográfico!)
-    // WA.camera.followPlayer(false); 
+    console.log("PISOU NO TAPETE! Apagando as luzes...");
+    // Adicionamos a pasta 'Sala 01' antes do nome da camada
+    WA.room.showLayer('Sala 01/dark_overlay');
 });
 
 // Quando o avatar SAIR do quadrado invisível
 WA.room.onLeaveZone('zona_reuniao', () => {
-    // 1. Esconde a tela escura (volta tudo ao normal)
-    WA.room.hideLayer('dark_overlay');
+    console.log("SAIU DO TAPETE! Acendendo as luzes...");
+    WA.room.hideLayer('Sala 01/dark_overlay');
 });
